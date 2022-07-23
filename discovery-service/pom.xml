@@ -22,6 +22,10 @@
                     <groupId>com.netflix.ribbon</groupId>
                     <artifactId>ribbon-eureka</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>javax.servlet</groupId>
+                    <artifactId>servlet-api</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
     </dependencies>
