@@ -17,6 +17,8 @@ spring:
     driver-class-name: org.postgresql.Driver
 server:
   port: 9090
+
+
 eureka:
   instance:
     status-page-url-path: ${management.context-path}/info
@@ -25,3 +27,22 @@ eureka:
     serviceUrl:
       defaultZone: http://discovery-service:8761/eureka/
 
+
+
+management:
+  endpoint:
+    health:
+      show-details: "ALWAYS"
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  context-path: http://localhost:${server.port}/actuator
+
+info:
+  application:
+    name: ${spring.application.name}
+    description: Ticketing application
+    version: '@project.version@'
+    spring-cloud-version: '@spring-cloud.version@'
+    spring-boot-verison: '@project.parent.version@'
