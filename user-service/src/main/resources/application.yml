@@ -17,4 +17,11 @@ spring:
     driver-class-name: org.postgresql.Driver
 server:
   port: 9090
+eureka:
+  instance:
+    status-page-url-path: ${management.context-path}/info
+    health-check-url-path: ${management.context-path}/info
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-service:8761/eureka/
 
